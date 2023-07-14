@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="listeners.TestNGWebDriverListeners" />
+		<listener class-name="utilities.RetryListenerClass" />
+	</listeners>
+	<test name="OnBoardingAutomationAssignmentsTests" thread-count="1" parallel="tests">
+		<parameter name="browserName" value="chrome" />
+		<groups>
+			<run>
+				<include name="ProductData" />
+				<include name="UserRegistration" />
+			</run>
+		</groups>
+		<classes>
+			<class name="tests.SeleniumTests" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->
