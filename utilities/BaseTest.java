@@ -48,9 +48,10 @@ public class BaseTest {
 	public void initializeTheSelectedBrowser(String browserName) {
 		logger.info(String.valueOf(Thread.currentThread().getId()));
 		if (browserName.equalsIgnoreCase("chrome")) {
-			String path = System.getProperty("user.dir") + "\\" + "drivers" + "\\" + "chromedriver.exe";
-			System.setProperty("webdriver.chrome.driver", path);
-			// WebDriverManager.chromedriver().setup();
+			// String path = System.getProperty("user.dir") + "\\" + "drivers" + "\\" +
+			// "chromedriver.exe";
+			// System.setProperty("webdriver.chrome.driver", path);
+			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized");
 			driver = new ChromeDriver(options);
